@@ -1,5 +1,3 @@
-const API_BASE = "http://localhost:8000";
-
 const form = document.getElementById("registerForm");
 const messageEl = document.getElementById("message");
 
@@ -23,7 +21,7 @@ form.addEventListener("submit", async (e) => {
 
     if (res.ok) {
       messageEl.innerText = data.message || "Registered";
-      setTimeout(() => (window.location.href = "login.html"), 1200);
+      setTimeout(() => (window.location.href = "/static/html/login.html"), 1200);
     } else {
       messageEl.innerText = data.detail || data.message || JSON.stringify(data);
     }
@@ -31,6 +29,3 @@ form.addEventListener("submit", async (e) => {
     messageEl.innerText = err.message;
   }
 });
-
-// BROKEN: duplicate handler, single quotes (no interpolation), wrong field "name"
-// document.getElementById("registerForm").addEventListener("submit", async function(e){ ... })

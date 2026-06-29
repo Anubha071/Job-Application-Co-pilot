@@ -1,14 +1,13 @@
-const API_BASE = "http://localhost:8000";
 
 const token = localStorage.getItem("token");
 const applicationId = localStorage.getItem("application_id");
 
 if(!token) { 
-    window.location.href = "login.html";
+    window.location.href = "/static/html/login.html";
 }
 
 if(!applicationId) {
-    window.location.href = "dashboard.html"
+    window.location.href = "/static/html/dashboard.html"
 }
 
 const statusMap = {
@@ -284,7 +283,7 @@ function setupLogout() {
             localStorage.removeItem("token");
             localStorage.removeItem("application_id");
             localStorage.removeItem("draft_id");
-            window.location.href = "login.html";
+            window.location.href = "/static/html/login.html";
         });
     });
 }
@@ -292,7 +291,7 @@ function setupLogout() {
 setupLogout();
 
 document.getElementById("backBtn").addEventListener("click", () => {
-    window.location.href = "dashboard.html";
+    window.location.href = "/static/html/dashboard.html";
 });
 
 document
@@ -306,7 +305,7 @@ document
     () => {
 
         window.location.href =
-            "revision.html"
+            "/static/html/revision.html"
     }
 )
 

@@ -1,8 +1,7 @@
-const API_BASE = "http://localhost:8000";
 const token = localStorage.getItem("token");
 
 if (!token) {
-  window.location.href = "login.html";
+  window.location.href = "/static/html/login.html";
 }
 
 const message = document.getElementById("message");
@@ -73,7 +72,7 @@ submitBtn.addEventListener("click", async (e) => {
       message.className = "message success";
       
       // ⚠️ Direct redirect — no setTimeout needed, no form to interfere
-      window.location.replace("dashboard.html");
+      window.location.replace("/static/html/dashboard.html");
       return;
     } else {
       const errMsg = data?.detail || data?.message || "Failed to create application.";
@@ -92,7 +91,7 @@ submitBtn.addEventListener("click", async (e) => {
     
     // 🚨 Always redirect to dashboard even on error — the background task may still succeed
     setTimeout(() => {
-      window.location.replace("dashboard.html");
+      window.location.replace("/static/html/dashboard.html");
     }, 2000);
   }
 });
@@ -103,7 +102,7 @@ document.querySelectorAll("#logoutBtn, #logoutBtnSidebar").forEach(btn => {
     localStorage.removeItem("token");
     localStorage.removeItem("application_id");
     localStorage.removeItem("draft_id");
-    window.location.href = "login.html";
+    window.location.href = "/static/html/login.html";
   });
 });
 

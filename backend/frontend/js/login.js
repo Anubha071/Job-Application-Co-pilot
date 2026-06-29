@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8000";
+
 
 const form = document.getElementById("loginForm");
 const message = document.getElementById("message");
@@ -22,7 +22,7 @@ form.addEventListener("submit", async (e) => {
 
     if (res.ok) {
       localStorage.setItem("token", data.access_token);
-      window.location.href = "dashboard.html";
+      window.location.href = "/static/html/dashboard.html";
     } else {
       message.innerText = data.detail || data.message || JSON.stringify(data);
     }
@@ -31,5 +31,4 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-// BROKEN: duplicate submit handler with single quotes (no interpolation)
-// document.getElementById("loginForm").addEventListener("submit", async function(e) { ... })
+

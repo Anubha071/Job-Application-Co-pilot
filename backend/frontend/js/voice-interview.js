@@ -1,12 +1,8 @@
-/**
- * Voice Mock Interview JS - v4
- * All functions are global so inline onclick="..." attributes in HTML can find them.
- */
-var API_BASE = "http://localhost:8000";
+
 var token = localStorage.getItem("token");
 
 if (!token) {
-    window.location.href = "login.html";
+    window.location.href = "/static/html/login.html";
 }
 
 // Speech Recognition
@@ -391,7 +387,7 @@ function doLogout() {
     localStorage.removeItem("token");
     localStorage.removeItem("application_id");
     localStorage.removeItem("draft_id");
-    window.location.href = "login.html";
+    window.location.href = "/static/html/login.html";
     return false;
 }
 

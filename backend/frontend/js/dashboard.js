@@ -1,8 +1,7 @@
-const API_BASE = "http://localhost:8000";
 const token = localStorage.getItem("token");
 
 if (!token) {
-  window.location.href = "login.html";
+  window.location.href = "/static/html/login.html";
 }
 
 let applications = [];
@@ -16,7 +15,7 @@ async function loadApplications() {
 
     if (response.status === 401) {
       localStorage.removeItem("token");
-      window.location.href = "login.html";
+      window.location.href = "/static/html/login.html";
       return;
     }
 
@@ -88,7 +87,7 @@ function renderApplications(applications) {
 
 function openApplication(applicationId) {
   localStorage.setItem("application_id", applicationId);
-  window.location.href = "application.html";
+  window.location.href = "/static/html/application.html";
 }
 
 // ⭐ Fancy modal delete confirmation
@@ -169,7 +168,7 @@ document.querySelectorAll("#logoutBtn, #logoutBtnSidebar").forEach(btn => {
     localStorage.removeItem("token");
     localStorage.removeItem("application_id");
     localStorage.removeItem("draft_id");
-    window.location.href = "login.html";
+    window.location.href = "/static/html/login.html";
   });
 });
 

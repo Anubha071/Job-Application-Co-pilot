@@ -1,5 +1,3 @@
-const API_BASE =
-    "http://localhost:8000"
 
 const token =
     localStorage.getItem(
@@ -17,7 +15,7 @@ if (
 ) {
 
     window.location.href =
-        "dashboard.html"
+        "/static/html/dashboard.html"
 }
 
 async function loadRevisions() {
@@ -235,7 +233,7 @@ document.querySelectorAll("#logoutBtn, #logoutBtnSidebar").forEach(btn => {
         localStorage.removeItem("token");
         localStorage.removeItem("application_id");
         localStorage.removeItem("draft_id");
-        window.location.href = "login.html";
+        window.location.href = "/static/html/login.html";
     });
 });
 
