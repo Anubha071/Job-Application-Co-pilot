@@ -129,12 +129,11 @@ async def create_application(
         
         # Step 2: Schedule the AI pipeline to run in the background
         # The response is sent immediately — the AI pipeline continues after
-        background_tasks.add_task(
-            run_ai_pipeline_in_background,
-            application.id,
-            parsed_resume,
-            jd_text
-        )
+        run_ai_pipeline_in_background(
+    application.id,
+    parsed_resume,
+    jd_text
+)
         
         # Return immediately — the AI pipeline runs in the background
         return {

@@ -34,6 +34,12 @@ app = FastAPI(
 BASE_DIR = Path(__file__).resolve().parent.parent
 frontend_dir = BASE_DIR / "frontend"
 
+app.mount(
+    "/static",
+    StaticFiles(directory=str(frontend_dir), html=True),
+    name="static"
+)
+
 # Provide a simple redirect so requests to `/static/html` go to a usable page.
 # Register this route before mounting StaticFiles so the redirect is matched
 # instead of being intercepted by the static mount.
