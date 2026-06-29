@@ -290,6 +290,26 @@ The UI features a modern, colorful design with:
 
 ---
 
-## 📄 License
+# 👨‍💻 Author
+
+**Anubha Sharma**
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+# ⭐ Acknowledgements
+
+- FastAPI
+- SQLAlchemy
+- Groq
+- Uvicorn
+- HTML/CSS/JavaScript
+
+---
+
+If you find this project useful, consider giving it a ⭐ on GitHub.
 
 
